@@ -41,7 +41,7 @@ namespace BinTrees {
             ip = new RBTree(std::forward<F>(v), xp);
         }
         auto i = static_cast<RBTree<T> *>(ip);
-        RBTree<T>* y = nullptr;
+        RBTree<T> *y = nullptr;
         while (i->p() && i->p()->c) {
             if (i->p() == i->p()->p()->l()) {
                 y = i->p()->p()->r();
@@ -50,15 +50,14 @@ namespace BinTrees {
                     y->c = false;
                     i->p()->p()->c = true;
                     i = i->p()->p();
-                }
-                else {
+                } else {
                     if (i == i->p()->r()) {
                         i = i->p();
-                        root = static_cast<RBTree<T>*>(root->LR(i));
+                        root = static_cast<RBTree<T> *>(root->LR(i));
                     }
                     i->p()->c = false;
                     i->p()->p()->c = true;
-                    root = static_cast<RBTree<T>*>(root->RR(i->p()->p()));
+                    root = static_cast<RBTree<T> *>(root->RR(i->p()->p()));
                 }
             } else {
                 y = i->p()->p()->l();
@@ -67,15 +66,14 @@ namespace BinTrees {
                     y->c = false;
                     i->p()->p()->c = true;
                     i = i->p()->p();
-                }
-                else {
+                } else {
                     if (i == i->p()->l()) {
                         i = i->p();
-                        root = static_cast<RBTree<T>*>(root->RR(i));
+                        root = static_cast<RBTree<T> *>(root->RR(i));
                     }
                     i->p()->c = false;
                     i->p()->p()->c = true;
-                    root = static_cast<RBTree<T>*>(root->LR(i->p()->p()));
+                    root = static_cast<RBTree<T> *>(root->LR(i->p()->p()));
                 }
             }
         }

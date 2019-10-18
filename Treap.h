@@ -53,8 +53,8 @@ namespace BinTrees {
     }
 
     std::random_device rd;
-    std::mt19937 tr(rd());
-    std::uniform_int_distribution<> dis(INT32_MIN, INT32_MAX);
+    std::minstd_rand tr(10086);
+    std::uniform_int_distribution<> dis(0, 300);
 
     template<class T>
     template<class F>

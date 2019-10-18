@@ -31,6 +31,8 @@ namespace BinTrees {
 
         int height() const;
 
+        int size() const;
+
         BinTree *&Pr();
 
         BinTree *&Lr();
@@ -43,6 +45,7 @@ namespace BinTrees {
         BinTree *l;
         BinTree *r;
         BinTree *p;
+
     };
 
     template<class T>
@@ -276,8 +279,12 @@ namespace BinTrees {
 
     template<class T>
     int BinTree<T>::height() const {
-//        printf("%d %d\n", v, std::max(R()?R()->height()+1:0,L()?L()->height()+1:0));
         return std::max(R() ? R()->height() + 1 : 0, L() ? L()->height() + 1 : 0);
+    }
+
+    template<class T>
+    int BinTree<T>::size() const {
+        return (R() ? R()->size() : 0) + (L() ? L()->size() : 0) + 1;
     }
 
     template<class T>
