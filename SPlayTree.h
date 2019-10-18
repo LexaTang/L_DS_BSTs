@@ -25,9 +25,6 @@ namespace BinTrees {
 
         SPlayTree *r();
 
-    private:
-        int rnd;
-
     };
 
     template<class T>
@@ -67,7 +64,7 @@ namespace BinTrees {
 
     template<class T>
     template<class F>
-    SPlayTree<T>::SPlayTree(F &&v, BinTree <T> *p) : BinSTree<T>(std::forward<F>(v), p), rnd(dis(tr)) {}
+    SPlayTree<T>::SPlayTree(F &&v, BinTree <T> *p) : BinSTree<T>(std::forward<F>(v), p) {}
 
     template<class T>
     SPlayTree<T> *SPlayTree<T>::p() {
